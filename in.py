@@ -5,3 +5,5 @@ if a < b:
     wynik = b
 else:
     wynik = a
+
+print('siema')

@@ -625,6 +625,9 @@ class Python3Listener(ParseTreeListener):
     # Enter a parse tree produced by Python3Parser#atom_expr.
     def enterAtom_expr(self, ctx:Python3Parser.Atom_exprContext):
         #print(ctx.getChild(0).getText())
+
+        #to wyswietla print('siema') print 'siema' rozbija expression na atom
+        print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#atom_expr.
@@ -634,7 +637,8 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#atom.
     def enterAtom(self, ctx:Python3Parser.AtomContext):
-        #print(ctx.getText())
+        #to wyswietla 'siema'
+        print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#atom.
@@ -653,6 +657,8 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#trailer.
     def enterTrailer(self, ctx:Python3Parser.TrailerContext):
+        #pobiera samo ('siema')
+        print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#trailer.

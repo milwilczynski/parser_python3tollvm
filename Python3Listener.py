@@ -7,23 +7,25 @@ else:
 
 # This class defines a complete listener for a parse tree produced by Python3Parser.
 class Python3Listener(ParseTreeListener):
-
     # Enter a parse tree produced by Python3Parser#single_input.
     def enterSingle_input(self, ctx:Python3Parser.Single_inputContext):
+        print('single_input')
         pass
 
     # Exit a parse tree produced by Python3Parser#single_input.
     def exitSingle_input(self, ctx:Python3Parser.Single_inputContext):
+        print('single_input_exit')
         pass
 
 
     # Enter a parse tree produced by Python3Parser#file_input.
     def enterFile_input(self, ctx:Python3Parser.File_inputContext):
-        print('enter file input')
+        print('file_input')
         pass
 
     # Exit a parse tree produced by Python3Parser#file_input.
     def exitFile_input(self, ctx:Python3Parser.File_inputContext):
+        print('exit_file_input')
         pass
 
 
@@ -137,15 +139,18 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#simple_stmt.
     def enterSimple_stmt(self, ctx:Python3Parser.Simple_stmtContext):
+        print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#simple_stmt.
     def exitSimple_stmt(self, ctx:Python3Parser.Simple_stmtContext):
+        print('//exit_stmt')
         pass
 
 
     # Enter a parse tree produced by Python3Parser#small_stmt.
     def enterSmall_stmt(self, ctx:Python3Parser.Small_stmtContext):
+        print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#small_stmt.
@@ -173,6 +178,7 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#testlist_star_expr.
     def enterTestlist_star_expr(self, ctx:Python3Parser.Testlist_star_exprContext):
+        print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#testlist_star_expr.
@@ -452,6 +458,7 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#test.
     def enterTest(self, ctx:Python3Parser.TestContext):
+        print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#test.

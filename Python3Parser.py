@@ -865,13 +865,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_single_input
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSingle_input" ):
-                listener.enterSingle_input(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSingle_input" ):
-                listener.exitSingle_input(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSingle_input" ):
+                return visitor.visitSingle_input(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -938,13 +936,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_file_input
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFile_input" ):
-                listener.enterFile_input(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFile_input" ):
-                listener.exitFile_input(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFile_input" ):
+                return visitor.visitFile_input(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1011,13 +1007,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_eval_input
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEval_input" ):
-                listener.enterEval_input(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEval_input" ):
-                listener.exitEval_input(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEval_input" ):
+                return visitor.visitEval_input(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1081,13 +1075,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_decorator
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDecorator" ):
-                listener.enterDecorator(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDecorator" ):
-                listener.exitDecorator(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDecorator" ):
+                return visitor.visitDecorator(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1148,13 +1140,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_decorators
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDecorators" ):
-                listener.enterDecorators(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDecorators" ):
-                listener.exitDecorators(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDecorators" ):
+                return visitor.visitDecorators(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1212,13 +1202,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_decorated
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDecorated" ):
-                listener.enterDecorated(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDecorated" ):
-                listener.exitDecorated(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDecorated" ):
+                return visitor.visitDecorated(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1274,13 +1262,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_async_funcdef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAsync_funcdef" ):
-                listener.enterAsync_funcdef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAsync_funcdef" ):
-                listener.exitAsync_funcdef(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAsync_funcdef" ):
+                return visitor.visitAsync_funcdef(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1337,13 +1323,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_funcdef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFuncdef" ):
-                listener.enterFuncdef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFuncdef" ):
-                listener.exitFuncdef(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFuncdef" ):
+                return visitor.visitFuncdef(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1403,13 +1387,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_parameters
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterParameters" ):
-                listener.enterParameters(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitParameters" ):
-                listener.exitParameters(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitParameters" ):
+                return visitor.visitParameters(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1483,13 +1465,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_typedargslist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTypedargslist" ):
-                listener.enterTypedargslist(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTypedargslist" ):
-                listener.exitTypedargslist(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTypedargslist" ):
+                return visitor.visitTypedargslist(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1737,13 +1717,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_tfpdef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTfpdef" ):
-                listener.enterTfpdef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTfpdef" ):
-                listener.exitTfpdef(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTfpdef" ):
+                return visitor.visitTfpdef(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -1817,13 +1795,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_varargslist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterVarargslist" ):
-                listener.enterVarargslist(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitVarargslist" ):
-                listener.exitVarargslist(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVarargslist" ):
+                return visitor.visitVarargslist(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2064,13 +2040,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_vfpdef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterVfpdef" ):
-                listener.enterVfpdef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitVfpdef" ):
-                listener.exitVfpdef(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVfpdef" ):
+                return visitor.visitVfpdef(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2109,13 +2083,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterStmt" ):
-                listener.enterStmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitStmt" ):
-                listener.exitStmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStmt" ):
+                return visitor.visitStmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2175,13 +2147,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_simple_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSimple_stmt" ):
-                listener.enterSimple_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSimple_stmt" ):
-                listener.exitSimple_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSimple_stmt" ):
+                return visitor.visitSimple_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2268,13 +2238,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_small_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSmall_stmt" ):
-                listener.enterSmall_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSmall_stmt" ):
-                listener.exitSmall_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSmall_stmt" ):
+                return visitor.visitSmall_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2373,13 +2341,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_expr_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExpr_stmt" ):
-                listener.enterExpr_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExpr_stmt" ):
-                listener.exitExpr_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr_stmt" ):
+                return visitor.visitExpr_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2478,13 +2444,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_annassign
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAnnassign" ):
-                listener.enterAnnassign(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAnnassign" ):
-                listener.exitAnnassign(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAnnassign" ):
+                return visitor.visitAnnassign(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2548,13 +2512,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_testlist_star_expr
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTestlist_star_expr" ):
-                listener.enterTestlist_star_expr(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTestlist_star_expr" ):
-                listener.exitTestlist_star_expr(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTestlist_star_expr" ):
+                return visitor.visitTestlist_star_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2670,13 +2632,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_augassign
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAugassign" ):
-                listener.enterAugassign(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAugassign" ):
-                listener.exitAugassign(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAugassign" ):
+                return visitor.visitAugassign(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2720,13 +2680,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_del_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDel_stmt" ):
-                listener.enterDel_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDel_stmt" ):
-                listener.exitDel_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDel_stmt" ):
+                return visitor.visitDel_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2762,13 +2720,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_pass_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPass_stmt" ):
-                listener.enterPass_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPass_stmt" ):
-                listener.exitPass_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPass_stmt" ):
+                return visitor.visitPass_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2819,13 +2775,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_flow_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFlow_stmt" ):
-                listener.enterFlow_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFlow_stmt" ):
-                listener.exitFlow_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFlow_stmt" ):
+                return visitor.visitFlow_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2887,13 +2841,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_break_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterBreak_stmt" ):
-                listener.enterBreak_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitBreak_stmt" ):
-                listener.exitBreak_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBreak_stmt" ):
+                return visitor.visitBreak_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2927,13 +2879,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_continue_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterContinue_stmt" ):
-                listener.enterContinue_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitContinue_stmt" ):
-                listener.exitContinue_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitContinue_stmt" ):
+                return visitor.visitContinue_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -2971,13 +2921,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_return_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterReturn_stmt" ):
-                listener.enterReturn_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitReturn_stmt" ):
-                listener.exitReturn_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitReturn_stmt" ):
+                return visitor.visitReturn_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3021,13 +2969,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_yield_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterYield_stmt" ):
-                listener.enterYield_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitYield_stmt" ):
-                listener.exitYield_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitYield_stmt" ):
+                return visitor.visitYield_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3071,13 +3017,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_raise_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRaise_stmt" ):
-                listener.enterRaise_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRaise_stmt" ):
-                listener.exitRaise_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRaise_stmt" ):
+                return visitor.visitRaise_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3135,13 +3079,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_import_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImport_stmt" ):
-                listener.enterImport_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImport_stmt" ):
-                listener.exitImport_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImport_stmt" ):
+                return visitor.visitImport_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3192,13 +3134,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_import_name
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImport_name" ):
-                listener.enterImport_name(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImport_name" ):
-                listener.exitImport_name(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImport_name" ):
+                return visitor.visitImport_name(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3266,13 +3206,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_import_from
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImport_from" ):
-                listener.enterImport_from(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImport_from" ):
-                listener.exitImport_from(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImport_from" ):
+                return visitor.visitImport_from(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3381,13 +3319,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_import_as_name
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImport_as_name" ):
-                listener.enterImport_as_name(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImport_as_name" ):
-                listener.exitImport_as_name(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImport_as_name" ):
+                return visitor.visitImport_as_name(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3439,13 +3375,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_dotted_as_name
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDotted_as_name" ):
-                listener.enterDotted_as_name(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDotted_as_name" ):
-                listener.exitDotted_as_name(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDotted_as_name" ):
+                return visitor.visitDotted_as_name(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3500,13 +3434,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_import_as_names
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterImport_as_names" ):
-                listener.enterImport_as_names(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitImport_as_names" ):
-                listener.exitImport_as_names(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitImport_as_names" ):
+                return visitor.visitImport_as_names(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3572,13 +3504,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_dotted_as_names
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDotted_as_names" ):
-                listener.enterDotted_as_names(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDotted_as_names" ):
-                listener.exitDotted_as_names(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDotted_as_names" ):
+                return visitor.visitDotted_as_names(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3634,13 +3564,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_dotted_name
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDotted_name" ):
-                listener.enterDotted_name(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDotted_name" ):
-                listener.exitDotted_name(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDotted_name" ):
+                return visitor.visitDotted_name(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3699,13 +3627,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_global_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterGlobal_stmt" ):
-                listener.enterGlobal_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitGlobal_stmt" ):
-                listener.exitGlobal_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitGlobal_stmt" ):
+                return visitor.visitGlobal_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3766,13 +3692,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_nonlocal_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNonlocal_stmt" ):
-                listener.enterNonlocal_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNonlocal_stmt" ):
-                listener.exitNonlocal_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNonlocal_stmt" ):
+                return visitor.visitNonlocal_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3831,13 +3755,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_assert_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAssert_stmt" ):
-                listener.enterAssert_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAssert_stmt" ):
-                listener.exitAssert_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAssert_stmt" ):
+                return visitor.visitAssert_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -3917,13 +3839,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_compound_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterCompound_stmt" ):
-                listener.enterCompound_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitCompound_stmt" ):
-                listener.exitCompound_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCompound_stmt" ):
+                return visitor.visitCompound_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4017,13 +3937,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_async_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAsync_stmt" ):
-                listener.enterAsync_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAsync_stmt" ):
-                listener.exitAsync_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAsync_stmt" ):
+                return visitor.visitAsync_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4104,13 +4022,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_if_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterIf_stmt" ):
-                listener.enterIf_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitIf_stmt" ):
-                listener.exitIf_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIf_stmt" ):
+                return visitor.visitIf_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4199,13 +4115,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_while_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterWhile_stmt" ):
-                listener.enterWhile_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitWhile_stmt" ):
-                listener.exitWhile_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWhile_stmt" ):
+                return visitor.visitWhile_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4285,13 +4199,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_for_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFor_stmt" ):
-                listener.enterFor_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFor_stmt" ):
-                listener.exitFor_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFor_stmt" ):
+                return visitor.visitFor_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4374,13 +4286,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_try_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTry_stmt" ):
-                listener.enterTry_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTry_stmt" ):
-                listener.exitTry_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTry_stmt" ):
+                return visitor.visitTry_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4495,13 +4405,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_with_stmt
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterWith_stmt" ):
-                listener.enterWith_stmt(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitWith_stmt" ):
-                listener.exitWith_stmt(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWith_stmt" ):
+                return visitor.visitWith_stmt(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4562,13 +4470,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_with_item
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterWith_item" ):
-                listener.enterWith_item(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitWith_item" ):
-                listener.exitWith_item(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitWith_item" ):
+                return visitor.visitWith_item(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4623,13 +4529,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_except_clause
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExcept_clause" ):
-                listener.enterExcept_clause(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExcept_clause" ):
-                listener.exitExcept_clause(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExcept_clause" ):
+                return visitor.visitExcept_clause(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4699,13 +4603,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_suite
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSuite" ):
-                listener.enterSuite(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSuite" ):
-                listener.exitSuite(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSuite" ):
+                return visitor.visitSuite(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4787,13 +4689,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_test
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTest" ):
-                listener.enterTest(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTest" ):
-                listener.exitTest(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTest" ):
+                return visitor.visitTest(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4860,13 +4760,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_test_nocond
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTest_nocond" ):
-                listener.enterTest_nocond(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTest_nocond" ):
-                listener.exitTest_nocond(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTest_nocond" ):
+                return visitor.visitTest_nocond(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4924,13 +4822,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_lambdef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLambdef" ):
-                listener.enterLambdef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLambdef" ):
-                listener.exitLambdef(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLambdef" ):
+                return visitor.visitLambdef(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -4988,13 +4884,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_lambdef_nocond
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterLambdef_nocond" ):
-                listener.enterLambdef_nocond(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitLambdef_nocond" ):
-                listener.exitLambdef_nocond(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLambdef_nocond" ):
+                return visitor.visitLambdef_nocond(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5051,13 +4945,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_or_test
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterOr_test" ):
-                listener.enterOr_test(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitOr_test" ):
-                listener.exitOr_test(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOr_test" ):
+                return visitor.visitOr_test(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5114,13 +5006,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_and_test
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAnd_test" ):
-                listener.enterAnd_test(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAnd_test" ):
-                listener.exitAnd_test(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAnd_test" ):
+                return visitor.visitAnd_test(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5175,13 +5065,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_not_test
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterNot_test" ):
-                listener.enterNot_test(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitNot_test" ):
-                listener.exitNot_test(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNot_test" ):
+                return visitor.visitNot_test(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5241,13 +5129,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_comparison
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterComparison" ):
-                listener.enterComparison(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitComparison" ):
-                listener.exitComparison(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitComparison" ):
+                return visitor.visitComparison(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5321,13 +5207,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_comp_op
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterComp_op" ):
-                listener.enterComp_op(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitComp_op" ):
-                listener.exitComp_op(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitComp_op" ):
+                return visitor.visitComp_op(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5436,13 +5320,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_star_expr
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterStar_expr" ):
-                listener.enterStar_expr(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitStar_expr" ):
-                listener.exitStar_expr(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStar_expr" ):
+                return visitor.visitStar_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5488,13 +5370,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_expr
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExpr" ):
-                listener.enterExpr(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExpr" ):
-                listener.exitExpr(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExpr" ):
+                return visitor.visitExpr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5551,13 +5431,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_xor_expr
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterXor_expr" ):
-                listener.enterXor_expr(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitXor_expr" ):
-                listener.exitXor_expr(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitXor_expr" ):
+                return visitor.visitXor_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5614,13 +5492,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_and_expr
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAnd_expr" ):
-                listener.enterAnd_expr(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAnd_expr" ):
-                listener.exitAnd_expr(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAnd_expr" ):
+                return visitor.visitAnd_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5683,13 +5559,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_shift_expr
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterShift_expr" ):
-                listener.enterShift_expr(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitShift_expr" ):
-                listener.exitShift_expr(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitShift_expr" ):
+                return visitor.visitShift_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5757,13 +5631,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_arith_expr
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterArith_expr" ):
-                listener.enterArith_expr(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitArith_expr" ):
-                listener.exitArith_expr(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArith_expr" ):
+                return visitor.visitArith_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5849,13 +5721,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_term
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTerm" ):
-                listener.enterTerm(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTerm" ):
-                listener.exitTerm(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTerm" ):
+                return visitor.visitTerm(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5921,13 +5791,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_factor
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFactor" ):
-                listener.enterFactor(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFactor" ):
-                listener.exitFactor(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFactor" ):
+                return visitor.visitFactor(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -5990,13 +5858,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_power
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterPower" ):
-                listener.enterPower(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitPower" ):
-                listener.exitPower(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPower" ):
+                return visitor.visitPower(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6052,13 +5918,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_atom_expr
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAtom_expr" ):
-                listener.enterAtom_expr(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAtom_expr" ):
-                listener.exitAtom_expr(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAtom_expr" ):
+                return visitor.visitAtom_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6162,13 +6026,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_atom
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterAtom" ):
-                listener.enterAtom(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitAtom" ):
-                listener.exitAtom(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAtom" ):
+                return visitor.visitAtom(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6315,13 +6177,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_testlist_comp
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTestlist_comp" ):
-                listener.enterTestlist_comp(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTestlist_comp" ):
-                listener.exitTestlist_comp(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTestlist_comp" ):
+                return visitor.visitTestlist_comp(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6436,13 +6296,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_trailer
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTrailer" ):
-                listener.enterTrailer(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTrailer" ):
-                listener.exitTrailer(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTrailer" ):
+                return visitor.visitTrailer(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6521,13 +6379,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_subscriptlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSubscriptlist" ):
-                listener.enterSubscriptlist(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSubscriptlist" ):
-                listener.exitSubscriptlist(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSubscriptlist" ):
+                return visitor.visitSubscriptlist(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6594,13 +6450,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_subscript
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSubscript" ):
-                listener.enterSubscript(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSubscript" ):
-                listener.exitSubscript(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSubscript" ):
+                return visitor.visitSubscript(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6676,13 +6530,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_sliceop
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterSliceop" ):
-                listener.enterSliceop(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitSliceop" ):
-                listener.exitSliceop(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSliceop" ):
+                return visitor.visitSliceop(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6742,13 +6594,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_exprlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterExprlist" ):
-                listener.enterExprlist(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitExprlist" ):
-                listener.exitExprlist(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitExprlist" ):
+                return visitor.visitExprlist(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6838,13 +6688,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_testlist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterTestlist" ):
-                listener.enterTestlist(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitTestlist" ):
-                listener.exitTestlist(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitTestlist" ):
+                return visitor.visitTestlist(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -6940,13 +6788,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_dictorsetmaker
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterDictorsetmaker" ):
-                listener.enterDictorsetmaker(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitDictorsetmaker" ):
-                listener.exitDictorsetmaker(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDictorsetmaker" ):
+                return visitor.visitDictorsetmaker(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7139,13 +6985,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_classdef
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterClassdef" ):
-                listener.enterClassdef(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitClassdef" ):
-                listener.exitClassdef(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitClassdef" ):
+                return visitor.visitClassdef(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7214,13 +7058,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_arglist
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterArglist" ):
-                listener.enterArglist(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitArglist" ):
-                listener.exitArglist(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArglist" ):
+                return visitor.visitArglist(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7293,13 +7135,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_argument
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterArgument" ):
-                listener.enterArgument(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitArgument" ):
-                listener.exitArgument(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitArgument" ):
+                return visitor.visitArgument(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7377,13 +7217,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_comp_iter
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterComp_iter" ):
-                listener.enterComp_iter(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitComp_iter" ):
-                listener.exitComp_iter(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitComp_iter" ):
+                return visitor.visitComp_iter(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7448,13 +7286,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_comp_for
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterComp_for" ):
-                listener.enterComp_for(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitComp_for" ):
-                listener.exitComp_for(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitComp_for" ):
+                return visitor.visitComp_for(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7519,13 +7355,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_comp_if
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterComp_if" ):
-                listener.enterComp_if(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitComp_if" ):
-                listener.exitComp_if(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitComp_if" ):
+                return visitor.visitComp_if(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7570,13 +7404,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_encoding_decl
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterEncoding_decl" ):
-                listener.enterEncoding_decl(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitEncoding_decl" ):
-                listener.exitEncoding_decl(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitEncoding_decl" ):
+                return visitor.visitEncoding_decl(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 
@@ -7614,13 +7446,12 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_yield_expr
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterYield_expr" ):
-                listener.enterYield_expr(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitYield_expr" ):
+                return visitor.visitYield_expr(self)
+            else:
+                return visitor.visitChildren(self)
 
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitYield_expr" ):
-                listener.exitYield_expr(self)
 
 
 
@@ -7670,13 +7501,11 @@ class Python3Parser ( Parser ):
         def getRuleIndex(self):
             return Python3Parser.RULE_yield_arg
 
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterYield_arg" ):
-                listener.enterYield_arg(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitYield_arg" ):
-                listener.exitYield_arg(self)
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitYield_arg" ):
+                return visitor.visitYield_arg(self)
+            else:
+                return visitor.visitChildren(self)
 
 
 

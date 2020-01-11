@@ -1,5 +1,6 @@
 # Generated from Python3.g4 by ANTLR 4.7.2
 from antlr4 import *
+from io import *
 if __name__ is not None and "." in __name__:
     from .Python3Parser import Python3Parser
 else:
@@ -7,25 +8,22 @@ else:
 
 # This class defines a complete listener for a parse tree produced by Python3Parser.
 class Python3Listener(ParseTreeListener):
+
     # Enter a parse tree produced by Python3Parser#single_input.
     def enterSingle_input(self, ctx:Python3Parser.Single_inputContext):
-        print('single_input')
         pass
 
     # Exit a parse tree produced by Python3Parser#single_input.
     def exitSingle_input(self, ctx:Python3Parser.Single_inputContext):
-        print('single_input_exit')
         pass
 
 
     # Enter a parse tree produced by Python3Parser#file_input.
     def enterFile_input(self, ctx:Python3Parser.File_inputContext):
-        print('file_input')
         pass
 
     # Exit a parse tree produced by Python3Parser#file_input.
     def exitFile_input(self, ctx:Python3Parser.File_inputContext):
-        print('exit_file_input')
         pass
 
 
@@ -130,6 +128,7 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#stmt.
     def enterStmt(self, ctx:Python3Parser.StmtContext):
+       # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#stmt.
@@ -139,18 +138,15 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#simple_stmt.
     def enterSimple_stmt(self, ctx:Python3Parser.Simple_stmtContext):
-        print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#simple_stmt.
     def exitSimple_stmt(self, ctx:Python3Parser.Simple_stmtContext):
-        print('//exit_stmt')
         pass
 
 
     # Enter a parse tree produced by Python3Parser#small_stmt.
     def enterSmall_stmt(self, ctx:Python3Parser.Small_stmtContext):
-        print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#small_stmt.
@@ -178,7 +174,7 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#testlist_star_expr.
     def enterTestlist_star_expr(self, ctx:Python3Parser.Testlist_star_exprContext):
-        print(ctx.getText())
+        #print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#testlist_star_expr.
@@ -188,6 +184,7 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#augassign.
     def enterAugassign(self, ctx:Python3Parser.AugassignContext):
+        #print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#augassign.
@@ -386,10 +383,15 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#if_stmt.
     def enterIf_stmt(self, ctx:Python3Parser.If_stmtContext):
+        string = ctx.getChild(0).getText() + '(' + ctx.getChild(1).getText() + ') {'
+        string = string + ctx.getChild(3).getText() + '}'  + ctx.getChild(4).getText() + '{'+ ctx.getChild(6).getText()
+        print(string)
         pass
 
     # Exit a parse tree produced by Python3Parser#if_stmt.
     def exitIf_stmt(self, ctx:Python3Parser.If_stmtContext):
+        string = '}'
+        print(string)
         pass
 
 
@@ -458,7 +460,6 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#test.
     def enterTest(self, ctx:Python3Parser.TestContext):
-        print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#test.
@@ -603,6 +604,7 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#factor.
     def enterFactor(self, ctx:Python3Parser.FactorContext):
+       # print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#factor.
@@ -612,6 +614,7 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#power.
     def enterPower(self, ctx:Python3Parser.PowerContext):
+        #print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#power.
@@ -621,6 +624,7 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#atom_expr.
     def enterAtom_expr(self, ctx:Python3Parser.Atom_exprContext):
+        #print(ctx.getChild(0).getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#atom_expr.
@@ -630,6 +634,7 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#atom.
     def enterAtom(self, ctx:Python3Parser.AtomContext):
+        #print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#atom.
@@ -756,6 +761,7 @@ class Python3Listener(ParseTreeListener):
 
     # Enter a parse tree produced by Python3Parser#comp_if.
     def enterComp_if(self, ctx:Python3Parser.Comp_ifContext):
+        print(ctx.getText())
         pass
 
     # Exit a parse tree produced by Python3Parser#comp_if.

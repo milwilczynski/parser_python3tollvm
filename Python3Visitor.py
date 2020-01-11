@@ -81,6 +81,7 @@ class Python3Visitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by Python3Parser#simple_stmt.
     def visitSimple_stmt(self, ctx:Python3Parser.Simple_stmtContext):
+        print("simple_stmt")
         return self.visitChildren(ctx)
 
 

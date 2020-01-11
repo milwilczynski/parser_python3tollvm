@@ -7,6 +7,10 @@ from antlr4.tree.Trees import Trees
 from Python3Lexer import Python3Lexer
 from Python3Parser import Python3Parser
 from Python3Listener import Python3Listener
+from io import StringIO
+from antlr4.Token import Token
+from antlr4.Utils import escapeWhitespace
+from antlr4.tree.Tree import RuleNode, ErrorNode, TerminalNode, Tree, ParseTree
 
 '''
 class Python3ErrorListener(ErrorListener):
@@ -50,7 +54,7 @@ class Python3ParserTests(TestCase):
         return parser
 '''
 
-
+#error listener
 class Python3ErrorListener(ErrorListener):
     def __init__(self, output):
         self.output = output
@@ -71,7 +75,7 @@ class Python3ErrorListener(ErrorListener):
     def symbol(self):
         return self._symbol
 
-
+#Przechodzi przez tokeny
 class Python3ParserTests(TestCase):
 
     def setup(self, path):
@@ -99,22 +103,25 @@ class Python3ParserTests(TestCase):
         parser.addErrorListener(self.errorListener)
         return parser
 
+#glowny kod wyswietla
     def main(self):
         input = FileStream("in.py") #read the first argument as a filestream
         lexer = Python3Lexer(input) #call your lexer
         stream = CommonTokenStream(lexer)
-       # parser = Python3Parser(stream)
-        parser = self.setup("in.py")
+        parser = Python3Parser(stream)
+        #parser = self.setup("in.py")
         listener = Python3Listener()
-        tree = parser.single_input()
+        tree = parser.file_input()
         walker = ParseTreeWalker()
         walker.walk(listener, tree)
-        self.assertEqual(len(self.errorListener.symbol), 0)
+        #self.assertEqual(len(self.errorListener.symbol), 0)
         #Python3ParserTests.assertEqual(len(Python3ParserTests.errorListener.symbol), 0)
         print(Trees.toStringTree(tree, Python3Listener, parser))
         print(tree)
 
 
-
+#starter maina
 if __name__ == "__main__":
     Python3ParserTests().main()
+
+

@@ -8,7 +8,6 @@ else:
 
 # This class defines a complete listener for a parse tree produced by Python3Parser.
 class Python3Listener(ParseTreeListener):
-
     # Enter a parse tree produced by Python3Parser#single_input.
     def enterSingle_input(self, ctx:Python3Parser.Single_inputContext):
         pass

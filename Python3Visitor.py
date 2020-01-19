@@ -8,7 +8,6 @@ else:
 # This class defines a complete generic visitor for a parse tree produced by Python3Parser.
 
 class Python3Visitor(ParseTreeVisitor):
-
     # Visit a parse tree produced by Python3Parser#single_input.
     def visitSingle_input(self, ctx:Python3Parser.Single_inputContext):
         return self.visitChildren(ctx)
@@ -217,6 +216,7 @@ class Python3Visitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by Python3Parser#if_stmt.
     def visitIf_stmt(self, ctx:Python3Parser.If_stmtContext):
+        print("siemanczi")
         return self.visitChildren(ctx)
 
 

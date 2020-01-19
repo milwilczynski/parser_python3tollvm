@@ -7,6 +7,7 @@ from antlr4.tree.Trees import Trees
 from Python3Lexer import Python3Lexer
 from Python3Parser import Python3Parser
 from Python3Listener import Python3Listener
+from Python3Visitor import Python3Visitor
 from io import StringIO
 from antlr4.Token import Token
 from antlr4.Utils import escapeWhitespace
@@ -105,19 +106,40 @@ class Python3ParserTests(TestCase):
 
 #glowny kod wyswietla
     def main(self):
+
+        #wspolna linika
         input = FileStream("in.py") #read the first argument as a filestream
-        lexer = Python3Lexer(input) #call your lexer
+
+
+
+       ##visitor
+        # lexer = arithmeticLexer(StdinStream())
+        lexer = Python3Lexer(input)
         stream = CommonTokenStream(lexer)
         parser = Python3Parser(stream)
-        #parser = self.setup("in.py")
-        listener = Python3Listener()
         tree = parser.file_input()
-        walker = ParseTreeWalker()
-        walker.walk(listener, tree)
+        answer = Python3Visitor().visit(tree)
+        print(Trees.toStringTree(tree, answer, parser));
+
+
+
+
+
+       #lexer = Python3Lexer(input) #call your lexer
+        #stream = CommonTokenStream(lexer)
+        #parser = Python3Parser(stream)
+        #listener = Python3Listener()
+        #tree = parser.file_input()
+        #walker = ParseTreeWalker()
+        #walker.walk(listener, tree)
+
+        ##opcjonalne liniki
         #self.assertEqual(len(self.errorListener.symbol), 0)
         #Python3ParserTests.assertEqual(len(Python3ParserTests.errorListener.symbol), 0)
-        print(Trees.toStringTree(tree, Python3Listener, parser))
-        print(tree)
+
+
+        #print(Trees.toStringTree(tree, Python3Listener, parser))
+        # print(tree)
 
 
 #starter maina

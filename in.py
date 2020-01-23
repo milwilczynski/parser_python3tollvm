@@ -1,9 +1,8 @@
-a = 4
-b = 8
-
-if a < b:
-    wynik = b
+a = 10
+c = 2
+if a < 5:
+    c = 3
+elif c>a:
+    a = 5
 else:
-    wynik = a
-
-print('siema')
+a    

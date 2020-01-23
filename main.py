@@ -1,61 +1,19 @@
-from unittest import TestCase
 import io
 from unittest import *
-from antlr4 import *
-from antlr4.error.ErrorListener import *
-from antlr4.tree.Trees import Trees
+
+import Dziecko
 from Python3Lexer import Python3Lexer
 from Python3Parser import Python3Parser
-from Python3Listener import Python3Listener
 from Python3Visitor import Python3Visitor
-from io import StringIO
-from antlr4.Token import Token
-from antlr4.Utils import escapeWhitespace
-from antlr4.tree.Tree import RuleNode, ErrorNode, TerminalNode, Tree, ParseTree
+from Python3Listener import Python3Listener
+from antlr4 import *
+from antlr4.error.ErrorListener import *
 
-'''
-class Python3ErrorListener(ErrorListener):
-    def __init__(self, output):
-        self.output = output
-        self._symbol = ''
-    def syntaxError(self, recognizer, offendingSymbol, line, column, msg, e):
-        self.output.write(msg)
-        self._symbol = offendingSymbol.text
-        stack = recognizer.getRuleInvocationStack()
-        stack.reverse()
-        print("rule stack: {}".format(str(stack)))
-        print("line {} : {} at {} : {}".format(str(line),
-                                               str(column),
-                                               str(offendingSymbol).replace(" ", u'\u23B5'),
-                                               msg.replace(" ", u'\u23B5')))
-    @property
-    def symbol(self):
-        return self._symbol
-class Python3ParserTests(TestCase):
-    def setup():
-        input = FileStream("/test_grammar.py")
-        lexer = Python3Lexer(input)
-        stream = CommonTokenStream(lexer)
-        # print out the token parsing
-        stream.fill()
-        print("TOKENS")
-        for token in stream.tokens:
-            if token.text != '<EOF>':
-                type_name = Python3Parser.symbolicNames[token.type]
-                tabs = 5 - len(type_name) // 4
-                sep = "\t" * tabs
-                print("    %s%s%s" % (type_name, sep,
-                                      token.text.replace(" ", u'\u23B5').replace("\n", u'\u2936')))
-        parser = Python3Parser(stream)
-        Python3ParserTests.output = io.StringIO()
-        Python3ParserTests.error = io.StringIO()
-        parser.removeErrorListeners()
-        Python3ParserTests.errorListener = Python3ErrorListener(Python3ParserTests.error)
-        parser.addErrorListener(Python3ParserTests.errorListener)
-        return parser
-'''
 
-#error listener
+# error listener
+from TreeUtils import TreeUtils
+
+
 class Python3ErrorListener(ErrorListener):
     def __init__(self, output):
         self.output = output
@@ -76,7 +34,8 @@ class Python3ErrorListener(ErrorListener):
     def symbol(self):
         return self._symbol
 
-#Przechodzi przez tokeny
+
+# Przechodzi przez tokeny
 class Python3ParserTests(TestCase):
 
     def setup(self, path):
@@ -104,46 +63,50 @@ class Python3ParserTests(TestCase):
         parser.addErrorListener(self.errorListener)
         return parser
 
-#glowny kod wyswietla
+    # glowny kod wyswietla
     def main(self):
 
-        #wspolna linika
-        input = FileStream("in.py") #read the first argument as a filestream
+        # wspolna linika
+        input = FileStream("in.py")  # read the first argument as a filestream
 
-
-
-       ##visitor
+        '''
+                ##visitor
         # lexer = arithmeticLexer(StdinStream())
         lexer = Python3Lexer(input)
         stream = CommonTokenStream(lexer)
         parser = Python3Parser(stream)
         tree = parser.file_input()
-        answer = Python3Visitor().visit(tree)
-        print(Trees.toStringTree(tree, answer, parser));
+        siemaaa = Dziecko.Testo()
+        lol = siemaaa.visitAtom(tree)
 
+        ParseTreeVisitor.tree = parser.file_input();
+        print(lol);
+        #print(Python3Visitor().visit(ParseTreeVisitor.tree ))
 
+        # print(Trees.toStringTree(tree, answer, parser))
+        # print(answer)
+        ruleNamesList = parser.getRuleNames()
+       # print(TreeUtils.toPrettyTree(TreeUtils(), tree, ruleNamesList))
 
-
-
-       #lexer = Python3Lexer(input) #call your lexer
-        #stream = CommonTokenStream(lexer)
-        #parser = Python3Parser(stream)
-        #listener = Python3Listener()
-        #tree = parser.file_input()
-        #walker = ParseTreeWalker()
-        #walker.walk(listener, tree)
-
+        '''
+        ##lisener
+        lexer = Python3Lexer(input) #call your lexer
+        stream = CommonTokenStream(lexer)
+        parser = Python3Parser(stream)
+        listener = Python3Listener()
+        tree = parser.file_input()
+        walker = ParseTreeWalker()
+        walker.walk(listener, tree)
+        ruleNamesList = parser.getRuleNames()
         ##opcjonalne liniki
         #self.assertEqual(len(self.errorListener.symbol), 0)
         #Python3ParserTests.assertEqual(len(Python3ParserTests.errorListener.symbol), 0)
 
-
+        #print(TreeUtils.toPrettyTree(TreeUtils(), tree, ruleNamesList))
         #print(Trees.toStringTree(tree, Python3Listener, parser))
-        # print(tree)
 
 
-#starter maina
+
+# starter maina
 if __name__ == "__main__":
     Python3ParserTests().main()
-
-
